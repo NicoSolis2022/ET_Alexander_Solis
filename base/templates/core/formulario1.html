@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario contacto</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        label {
+            clear: both;
+            float: left;
+            width: 180px;
+        }
+
+        .error-control {
+            border: 1px solid red;
+        }
+
+        label.error {
+            color: red;
+            width: 300px;
+            font-size: 0.8em;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+        .form-register {
+            width: 450px;
+            background: #22576d;
+            padding: 30px;
+            margin: auto;
+            margin-top: 75px;
+            color: white;
+            border-radius: 4px;
+            box-shadow: 7px 13px 37px #000;
+            margin-bottom: 100px;
+        }
+
+        .form-register h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            width: 100%;
+            backdrop-filter: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            border: 1px solid rgb(255, 255, 255);
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#contacto").validate({
+                rules:
+                {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    nombre: "required",
+
+                    telefono: "required",
+                    asunto: "required",
+                    mensaje: "required"
+
+
+
+                },///reglas de validacion
+                messages:
+                {
+                    email: {
+                        required: 'Ingresa tu correo electrónico',
+                        email: 'Formato de correo no válido'
+                    }, 
+                    telefono: {
+                        required: 'Ingrese su número de celular',
+                        minlength: 'Cantidad de digitos insuficiente'
+                    },
+                     nombre: {
+                        required: 'Debe ingresar su nombre'
+                    }, 
+                    asunto: {
+                        required: 'Debe ingresar el asunto'
+
+                    },
+                     mensaje: {
+                        required: 'Debe ingresar el un mensaje'
+
+                    }
+                }
+            });
+        });
+
+    </script>
+
+    <title>Formulario de contacto</title>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/evo.png' %}" alt="logo de prueba">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index">Inicio</a></li>
+                <li><a href="acercade">acerca de</a></li>
+                <li><a href="galeria">galeria</a></li>
+                <li><a href="formulario1">Contacto</a></li>
+                <li><a href="api">Gacha</a></li>
+            </ul>
+        </nav>
+        <a href="Registro2" class="button">Registro</a>
+    </header>
+    <!--NavBar-->
+
+    <hr>
+    <div>
+        <section class="form-register">
+            <h4> Formulario de contacto </h4>
+            <div id="form-register">
+                <form id="contacto" action="index.html" method="post">
+                    <label> Nombre </label>
+                    <input class="controls" type="text" id="nombre" name="nombre" placeholder="nombre" required>
+
+                    <label> Telefono </label>
+                    <input class="controls" type="number" id="telefono" name="telefono" placeholder="telefono"
+                        minlength="9" required>
+
+                    <label> Email </label>
+                    <input class="controls" type="text" id="email" name="email" placeholder="nombre@dominio.cl"
+                        required>
+
+                    <label> Asunto </label>
+                    <input class="controls" type="text" id="asunto" name="asunto" required placeholder="Asunto">
+
+                    <label> Mensaje </label>
+                    <input class="controls" type="text" id="mensaje" name="mensaje" maxlength="300" required
+                    placeholder="300 caracteres maximo">
+
+                    <button> Enviar </button>
+
+                </form>
+
+            </div>
+    </div>
+    </section>
+    <footer class="footer">
+        <br><br>
+        <footer>
+            <div class="row col-12">
+                <div class="col-lg-2">
+                    <img src="{% static 'img/evo.png' %}" alt="logoBookStop" width="60px">
+                </div>
+                <div class="col-lg-1">
+                    <a href="index.html" id="linkFooter"><strong>INICIO</strong></a>
+                </div>
+                <div class="col-lg-1">
+                    <strong></strong>
+                </div>
+                <div class="col-lg-1">
+                    <strong>FORO</strong>
+                </div>
+                <div class="col-lg-2">
+                    <a href="#" id="linkFooter"><strong>RANKING</strong></a>
+                </div>
+
+                <div class="col-lg-2">
+                    <strong>Síguenos</strong>
+                    <br><br>
+                    <div class="row">
+                        <img src="{% static 'img/2000px-Facebook_font_awesome.svg.png' %}" alt="" width="30px" height="30px"
+                            style=" margin-left: 15px;">
+                        <img src="{% static 'img/twitter.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        <img src="{% static 'img/Instagram.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+
+                    <strong>Contacto</strong>
+                    <br><br>
+                    <div class="row">
+                        <img src="{% static 'img/location.png' %}" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>Mario Carneyro 4452, pedro aguirre cerda</p>
+                    </div>
+                    <div class="row">
+                        <img src="{% static 'img/fono.png' %}" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>225554000</p>
+                    </div>
+                    <div class="row">
+                        <img src="{% static 'img/email.png' %}" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>consulta@evo.cl</p>
+                    </div>
+                    <br><br><br>
+
+                    <p>&copy; EVO - 2023</p>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+</html>
+<!--footer-->
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

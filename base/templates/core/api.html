@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+
+  <!-- CSS only -->
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      background: rgb(218, 227, 234);
+
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Oswald", sans-serif;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    .pokemon-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
+    .pokemon-block,
+    .pokemon-block-back {
+      border-radius: 10px;
+      padding: 10px;
+      background-color: white;
+      box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    }
+
+    .img-container {
+      background-image: url("./blob.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .pokemon-block p {
+      margin: 5px;
+    }
+
+    .name {
+      text-transform: capitalize;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    #spinner {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    .pagination {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 50px;
+    }
+
+    .card-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .card-container {
+      transform: rotateY(180deg);
+    }
+
+    .pokemon-block,
+    .pokemon-block-back {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .pokemon-block-back {
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0%;
+    }
+
+    .stat-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header class="header">
+    <div class="logo">
+      <img src="{% static 'img/evo.png' %}" alt="logo de prueba">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index">Inicio</a></li>
+        <li><a href="acercade">acerca de</a></li>
+        <li><a href="galeria">galeria</a></li>
+        <li><a href="formulario1">Contacto</a></li>
+        <li><a href="api">Gacha</a></li>
+      </ul>
+    </nav>
+    <a href="Registro2" class="button">Registro</a>
+  </header>
+
+  <h1 class="title"></h1>
+  <div class="pokemon-container">
+
+  </div>
+  <nav class="pagination" aria-label="...">
+    <ul class="pagination">
+      <li class="page-item" id="previous">
+        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+      </li>
+      <li class="page-item" id="next">
+        <a class="page-link" href="#">Siguiente</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="spinner" class="spinner-border text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <script src="{% static 'js/main.js' %}"></script>
+  <footer class="footer">
+    <br><br>
+    <footer>
+      <div class="row col-12">
+        <div class="col-lg-2">
+          <img src="{% static 'img/evo.png' %}" alt="logoBookStop" width="60px">
+        </div>
+        <div class="col-lg-1">
+          <a href="index.html" id="linkFooter"><strong>INICIO</strong></a>
+        </div>
+        <div class="col-lg-1">
+          <strong></strong>
+        </div>
+        <div class="col-lg-1">
+          <strong>FORO</strong>
+        </div>
+        <div class="col-lg-2">
+          <a href="#" id="linkFooter"><strong>RANKING</strong></a>
+        </div>
+
+        <div class="col-lg-2">
+          <strong>Síguenos</strong>
+          <br><br>
+          <div class="row">
+            <img src="{% static 'img/2000px-Facebook_font_awesome.svg.png' %}" alt="" width="30px" height="30px"
+              style=" margin-left: 15px;">
+            <img src="{% static 'img/twitter.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+            <img src="{% static 'img/Instagram.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-3">
+
+          <strong>Contacto</strong>
+          <br><br>
+          <div class="row">
+            <img src="{% static 'img/location.png' %}" alt="" width="20px" height="20px"
+              style="margin-right: 10px; margin-left: 15px;">
+            <p>Mario Carneyro 4452, pedro aguirre cerda</p>
+          </div>
+          <div class="row">
+            <img src="{% static 'img/fono.png' %}" alt="" width="20px" height="20px"
+              style="margin-right: 10px; margin-left: 15px;">
+            <p>225554000</p>
+          </div>
+          <div class="row">
+            <img src="{% static 'img/email.png' %}" alt="" width="20px" height="20px"
+              style="margin-right: 10px; margin-left: 15px;">
+            <p>consulta@evo.cl</p>
+          </div>
+          <br><br><br>
+
+          <p>&copy; EVO - 2023</p>
+        </div>
+      </div>
+    </footer>
+  </footer>
+</body>

@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% load crispy_forms_tags %}
+    <div class="container">
+        <br><br> <br>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>ingresa tus credenciales</h2>
+                        <hr>
+                        <form action="#" method="POST">
+
+                            {% csrf_token %}
+
+                            {{form | crispy}}
+
+                            <a href="{% url 'index' "> ir al inicio </a>
+                            <input type="submit" value="ingresar" class="btn btn-success" style="float: right;">
+
+                            <a href="{% url 'ver %}" class="btn btn-primary"> ir a otra pagina </a>
+
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'mostrar' " class="btn btn-success">mostrar usuario</a>
+                                <a href="{% url 'logout' %" class="btn btn-primary">cerrar sesion</a>
+                                <a href="#">bienvenido @{{user.username}}</a>
+                                {% else% }
+                                <a href="{% url 'login' %}" class="btn btn-primary">iniciar sesion</a>
+                                {% endif %}  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

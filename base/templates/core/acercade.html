@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acerca de</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}" type="text/css">
+  
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/evo.png' %}" alt="logo de prueba">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index">Inicio</a></li>
+                <li><a href="acercade">acerca de</a></li>
+                <li><a href="galeria">galeria</a></li>
+                <li><a href="FORMULARIO1">Contacto</a></li>
+                <li><a href="api">Gacha</a></li>
+            </ul>
+        </nav>
+        <a href="Registro2" class="button">Registro</a>
+    </header>
+    <div class="row jumbotron" id="qSomos">
+        <div class="col-lg-6">
+            <div>
+                <h1>EVO</h1><br>
+                <h2 class="lead"><strong>Quiénes somos?</strong></h2>
+                <p>
+                    Somos una comunidad friki enfocada en la venta de productos de este medio como tambien el del anime
+                    y productos asiaticos
+                    usando el nombre de EVO.<br><br>
+
+                    Somos completamente nuevos asi que cualquier recomendacion es bien recibida por parte de nuetros
+                    usuarios, porfavor comentenos
+                    a traves del boton de Contacto<br><br>
+
+                    Si amas el gaming, las figuras, los comics o mangas no dudes en comprar aqui.<strong> EVO TE
+                        ESPERA</strong>
+                </p>
+            </div>
+        </div>
+        <iframe width="600" height="350" src="https://www.youtube.com/embed/l1Mje-Cetvs" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+</body>
+
+<footer class="footer">
+    <br><br>
+    <footer>
+        <div class="row col-12">
+            <div class="col-lg-2">
+                <img src="{% static 'img/evo.png' %}" alt="logoBookStop" width="60px">
+            </div>
+            <div class="col-lg-1">
+                <a href="index" id="linkFooter"><strong>INICIO</strong></a>
+            </div>
+            <div class="col-lg-1">
+                <strong></strong>
+            </div>
+            <div class="col-lg-1">
+                <strong>FORO</strong>
+            </div>
+            <div class="col-lg-2">
+                <a href="#" id="linkFooter"><strong>RANKING</strong></a>
+            </div>
+
+            <div class="col-lg-2">
+                <strong>Síguenos</strong>
+                <br><br>
+                <div class="row">
+                    <img src="{% static 'img/2000px-Facebook_font_awesome.svg.png' %}" alt="" width="30px" height="30px"
+                        style=" margin-left: 15px;">
+                    <img src="{% static 'img/twitter.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                    <img src="{% static 'img/Instagram.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <strong>Contacto</strong>
+                <br><br>
+                <div class="row">
+                    <img src="{% static 'img/location.png' %}" alt="" width="20px" height="20px"
+                        style="margin-right: 10px; margin-left: 15px;">
+                    <p>Mario Carneyro 4452, pedro aguirre cerda</p>
+                </div>
+                <div class="row">
+                    <img src="{% static 'img/fono.png' %}" alt="" width="20px" height="20px"
+                        style="margin-right: 10px; margin-left: 15px;">
+                    <p>225554000</p>
+                </div>
+                <div class="row">
+                    <img src="{% static 'img/email.png' %}" alt="" width="20px" height="20px"
+                        style="margin-right: 10px; margin-left: 15px;">
+                    <p>consulta@evo.cl</p>
+                </div>
+                <br><br><br>
+
+                <p>&copy; EVO - 2023</p>
+            </div>
+        </div>
+    </footer>
+</footer>
+
+</html>
